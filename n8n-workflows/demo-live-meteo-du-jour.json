@@ -1,0 +1,214 @@
+{
+  "name": "demo-live-meteo-du-jour",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -208,
+        -128
+      ],
+      "id": "0fdbaf2f-15ba-4eef-b50d-02dd2b3129fa",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "cityName": "={{ $json.output.capital }}",
+        "language": "fr"
+      },
+      "type": "n8n-nodes-base.openWeatherMap",
+      "typeVersion": 1,
+      "position": [
+        368,
+        -128
+      ],
+      "id": "27b6d8fe-c8ed-4bf3-b301-4dbaaf994db6",
+      "name": "OpenWeatherMap",
+      "credentials": {
+        "openWeatherMapApi": {
+          "id": "eQnaU61r4W2Vygx1",
+          "name": "OpenWeatherMap account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "text": "=From  {{ $json.Timezone }} extract the state",
+        "schemaType": "fromJson",
+        "jsonSchemaExample": "{\n\t\"country\": \"USA\",\n\t\"capital\": \"San Francisco\"\n}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1.2,
+      "position": [
+        16,
+        -128
+      ],
+      "id": "6f8ee299-652a-4e51-b460-ff4a9d241e0f",
+      "name": "Information Extractor"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        96,
+        96
+      ],
+      "id": "af039beb-cb1c-40d3-b630-0083fca96075",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "YeVXFgmFBLSoZF8q",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "77c0498d-0b01-453d-8ea4-5a8739033685",
+              "leftValue": "={{ $json.main.temp }}",
+              "rightValue": 5,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {
+          "ignoreCase": false
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        592,
+        -128
+      ],
+      "id": "0a9aefe2-5e20-42cb-adb3-417c2e2ec3b0",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "sendTo": "chrysniongolo@gmail.com",
+        "subject": "=Alerte ! Météo du jour.",
+        "message": "=<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Météo du Jour</title>\n</head>\n<body style=\"margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4;\">\n    <div style=\"max-width: 600px; margin: 20px auto; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;\">\n        <!-- Header -->\n        <div style=\"background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px 20px; text-align: center;\">\n            <h1 style=\"margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;\">☁️ Météo du Jour</h1>\n            <p style=\"margin: 10px 0 0 0; color: #f0f0f0; font-size: 14px;\">{{ new Date().toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}</p>\n        </div>\n        \n        <!-- Main Content -->\n        <div style=\"padding: 30px 20px;\">\n            <!-- Temperature Section -->\n            <div style=\"text-align: center; margin-bottom: 30px;\">\n                <div style=\"display: inline-block; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 15px; padding: 20px 40px; box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);\">\n                    <div style=\"font-size: 48px; font-weight: bold; color: #ffffff; margin-bottom: 5px;\">{{ $json.main.temp }}°C</div>\n                    <div style=\"font-size: 16px; color: #ffffff; text-transform: capitalize;\">{{ $json.weather[0].description }}</div>\n                </div>\n            </div>\n            \n            <!-- Weather Icon -->\n            <div style=\"text-align: center; margin: 20px 0;\">\n                <span style=\"font-size: 80px;\">{{ $json.weather[0].icon === '10n' ? '🌧️' : '☁️' }}</span>\n            </div>\n            \n            <!-- Weather Details Grid -->\n            <div style=\"display: table; width: 100%; margin-top: 30px;\">\n                <div style=\"display: table-row;\">\n                    <div style=\"display: table-cell; width: 50%; padding: 15px; background-color: #f8f9fa; border-radius: 8px; margin-right: 10px;\">\n                        <div style=\"color: #6c757d; font-size: 12px; text-transform: uppercase; margin-bottom: 5px;\">🌡️ Ressenti</div>\n                        <div style=\"color: #212529; font-size: 20px; font-weight: 600;\">{{ $json.main.feels_like }}°C</div>\n                    </div>\n                    <div style=\"display: table-cell; width: 50%; padding: 15px; background-color: #f8f9fa; border-radius: 8px;\">\n                        <div style=\"color: #6c757d; font-size: 12px; text-transform: uppercase; margin-bottom: 5px;\">💧 Humidité</div>\n                        <div style=\"color: #212529; font-size: 20px; font-weight: 600;\">{{ $json.main.humidity }}%</div>\n                    </div>\n                </div>\n            </div>\n            \n            <div style=\"display: table; width: 100%; margin-top: 10px;\">\n                <div style=\"display: table-row;\">\n                    <div style=\"display: table-cell; width: 50%; padding: 15px; background-color: #f8f9fa; border-radius: 8px; margin-right: 10px;\">\n                        <div style=\"color: #6c757d; font-size: 12px; text-transform: uppercase; margin-bottom: 5px;\">🌬️ Vent</div>\n                        <div style=\"color: #212529; font-size: 20px; font-weight: 600;\">{{ $json.wind.speed }} km/h</div>\n                    </div>\n                    <div style=\"display: table-cell; width: 50%; padding: 15px; background-color: #f8f9fa; border-radius: 8px;\">\n                        <div style=\"color: #6c757d; font-size: 12px; text-transform: uppercase; margin-bottom: 5px;\">👁️ Visibilité</div>\n                        <div style=\"color: #212529; font-size: 20px; font-weight: 600;\">{{ ($json.visibility / 1000).toFixed(1) }} km</div>\n                    </div>\n                </div>\n            </div>\n            \n            <!-- Temperature Range -->\n            <div style=\"margin-top: 20px; padding: 20px; background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); border-radius: 10px;\">\n                <div style=\"text-align: center; color: #ffffff;\">\n                    <div style=\"font-size: 14px; margin-bottom: 10px;\">Températures du jour</div>\n                    <div style=\"display: flex; justify-content: center; align-items: center; gap: 20px;\">\n                        <div>\n                            <div style=\"font-size: 12px; opacity: 0.9;\">Min</div>\n                            <div style=\"font-size: 24px; font-weight: bold;\">{{ $json.main.temp_min }}°</div>\n                        </div>\n                        <div style=\"font-size: 30px;\">→</div>\n                        <div>\n                            <div style=\"font-size: 12px; opacity: 0.9;\">Max</div>\n                            <div style=\"font-size: 24px; font-weight: bold;\">{{ $json.main.temp_max }}°</div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        \n        <!-- Footer -->\n        <div style=\"background-color: #f8f9fa; padding: 20px; text-align: center; border-top: 1px solid #e9ecef;\">\n            <p style=\"margin: 0; color: #6c757d; font-size: 12px;\">Données météorologiques en temps réel</p>\n            <p style=\"margin: 5px 0 0 0; color: #adb5bd; font-size: 11px;\">Bonne journée ! 🌤️</p>\n        </div>\n    </div>\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        816,
+        -128
+      ],
+      "id": "5c33dc57-042d-46e1-b6ec-9df67702b3e5",
+      "name": "Send a message",
+      "webhookId": "878e94b9-432d-4105-ad15-a0efef893abe",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "FBFxHnE2iIVdBDmq",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor": {
+      "main": [
+        [
+          {
+            "node": "OpenWeatherMap",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenWeatherMap": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "70b8fbcf-c70b-4743-bc0e-c73fb72f649f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9658c92e204e680fa78e8391ac8181ef476afff007519e6c6dbe3ec9fbf8487f"
+  },
+  "id": "zAvMzETnAo-uUhDY6unW9",
+  "tags": []
+}
