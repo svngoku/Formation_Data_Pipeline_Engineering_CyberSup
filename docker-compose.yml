@@ -1,0 +1,170 @@
+version: '3.8'
+
+# =============================================================================
+# Formation Data Pipeline - Docker Compose
+# =============================================================================
+# Services inclus :
+# - n8n (automatisation)
+# - Airflow (orchestration)
+# - PostgreSQL (metadata Airflow)
+# =============================================================================
+
+x-airflow-common: &airflow-common
+  image: apache/airflow:2.8.0-python3.11
+  environment: &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__FERNET_KEY: 'zTvhk9gBAQBBQABAQEqHhk9gBAQBBQABAQEqGhk9gBAQ='
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__WEBSERVER__EXPOSE_CONFIG: 'true'
+    AIRFLOW__SCHEDULER__MIN_FILE_PROCESS_INTERVAL: 30
+    _PIP_ADDITIONAL_REQUIREMENTS: >-
+      pandas>=2.0.0
+      pyarrow>=14.0.0
+      requests>=2.31.0
+      tenacity>=8.2.0
+      dbt-core>=1.7.0
+      dbt-duckdb>=1.7.0
+      pydantic-settings>=2.0.0
+  volumes:
+    - ../airflow/dags:/opt/airflow/dags
+    - ../scripts:/opt/airflow/scripts
+    - ../data:/opt/airflow/data
+    - ../dbt:/opt/airflow/dbt
+    - airflow-logs:/opt/airflow/logs
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+services:
+  # ---------------------------------------------------------------------------
+  # PostgreSQL - Base de données metadata Airflow
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # Airflow Init - Initialisation de la base et création admin
+  # ---------------------------------------------------------------------------
+  airflow-init:
+    <<: *airflow-common
+    container_name: airflow-init
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        mkdir -p /sources/logs /sources/dags /sources/plugins
+        chown -R "${AIRFLOW_UID:-50000}:0" /sources/{logs,dags,plugins}
+        exec /entrypoint airflow version
+    environment:
+      <<: *airflow-common-env
+      # airflow-init runs as root (user: 0:0) to prepare mounted folders, but the Airflow image
+      # blocks running pip as root. Prevent pip installs on this init container.
+      _PIP_ADDITIONAL_REQUIREMENTS: ""
+      _AIRFLOW_DB_MIGRATE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: admin
+      _AIRFLOW_WWW_USER_PASSWORD: admin
+    user: "0:0"
+    volumes:
+      - ../airflow:/sources
+
+  # ---------------------------------------------------------------------------
+  # Airflow Webserver - Interface web
+  # ---------------------------------------------------------------------------
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: airflow-webserver
+    command: webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+  # ---------------------------------------------------------------------------
+  # Airflow Scheduler - Planificateur de tâches
+  # ---------------------------------------------------------------------------
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: airflow-scheduler
+    command: scheduler
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+  # ---------------------------------------------------------------------------
+  # n8n - Automatisation et triggers
+  # ---------------------------------------------------------------------------
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=false
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+      - GENERIC_TIMEZONE=Europe/Paris
+    volumes:
+      - n8n-data:/home/node/.n8n
+      - ../scripts:/home/node/scripts:ro
+      - ../data:/home/node/data
+      - ../n8n/workflows:/home/node/workflows
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # Prefect Server (optionnel) - Décommenter si besoin
+  # ---------------------------------------------------------------------------
+  # prefect-server:
+  #   image: prefecthq/prefect:2-python3.11
+  #   container_name: prefect-server
+  #   command: prefect server start --host 0.0.0.0
+  #   ports:
+  #     - "4200:4200"
+  #   volumes:
+  #     - prefect-data:/root/.prefect
+  #   restart: unless-stopped
+
+volumes:
+  postgres-data:
+  airflow-logs:
+  n8n-data:
+  # prefect-data:
+
+networks:
+  default:
+    name: data-pipeline-network
