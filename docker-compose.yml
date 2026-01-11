@@ -128,7 +128,7 @@ services:
   # n8n - Automatisation et triggers
   # ---------------------------------------------------------------------------
   n8n:
-    image: docker.n8n.io/n8nio/n8n:latest
+    image: docker.n8n.io/n8nio/n8n:2.2.6
     container_name: n8n
     ports:
       - "5678:5678"
@@ -139,12 +139,38 @@ services:
       - N8N_PROTOCOL=http
       - WEBHOOK_URL=http://localhost:5678/
       - GENERIC_TIMEZONE=Europe/Paris
+      # Task runners (external mode) + Python
+      - N8N_RUNNERS_ENABLED=true
+      - N8N_RUNNERS_MODE=external
+      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN:-a_secure_token}
+      - N8N_RUNNERS_BROKER_LISTEN_ADDRESS=0.0.0.0
+      - N8N_RUNNERS_BROKER_PORT=5679
+      - N8N_NATIVE_PYTHON_RUNNER=true
     volumes:
       - n8n-data:/home/node/.n8n
       - ../scripts:/home/node/scripts:ro
       - ../data:/home/node/data
       - ../n8n/workflows:/home/node/workflows
     restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # n8n Task Runner (optionnel) - Exécution isolée (ex: Python Code Node)
+  # ---------------------------------------------------------------------------
+  n8n-task-runner:
+    build:
+      context: ./n8n-task-runner
+      args:
+        N8N_RUNNERS_VERSION: 2.2.6
+    image: n8n-task-runner:2.2.6
+    container_name: n8n-task-runner
+    environment:
+      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN:-a_secure_token}
+      - N8N_RUNNERS_TASK_BROKER_URI=http://n8n:5679
+      - N8N_RUNNERS_LAUNCHER_LOG_LEVEL=info
+      - N8N_RUNNERS_MAX_CONCURRENCY=5
+    restart: unless-stopped
+    depends_on:
+      - n8n
 
   # ---------------------------------------------------------------------------
   # Prefect Server (optionnel) - Décommenter si besoin
