@@ -1,0 +1,168 @@
+{
+  "name": "mcp-client-ai-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=You are an expoert tasked to answer the user questions based on the gived MCP tools.\nToday we are :  {{ $json[\"Readable date\"] }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -80,
+        0
+      ],
+      "id": "96ca3cb3-1ed6-47ab-944d-f6835c2a8b71",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "endpointUrl": "https://mcp-server-google-se-e9b57459.alpic.live/mcp",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        128
+      ],
+      "id": "99c41a15-1615-478a-a048-5b38a77e11fa",
+      "name": "MCP Client"
+    },
+    {
+      "parameters": {
+        "model": "grok-4-fast-reasoning",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatXAiGrok",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        208
+      ],
+      "id": "ef7d534c-ec09-4876-8e42-9dbb9652cf98",
+      "name": "xAI Grok Chat Model",
+      "credentials": {
+        "xAiApi": {
+          "id": "LUYsJw9XGf2BJHzo",
+          "name": "xAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -432,
+        0
+      ],
+      "id": "9e709ea4-198a-4e86-9f96-e2cca0d52b72",
+      "name": "When chat message received",
+      "webhookId": "3c6c53de-c688-43b9-8c90-a003a2855df9"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -80,
+        208
+      ],
+      "id": "ce2a0ad0-d7e2-4344-897d-6297a794b145",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -464,
+        -144
+      ],
+      "id": "02a83bf7-238f-4bd1-bba6-13236a7c256e",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "xAI Grok Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "8b236926-b5b7-4353-80f1-4baee0e29e6d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9658c92e204e680fa78e8391ac8181ef476afff007519e6c6dbe3ec9fbf8487f"
+  },
+  "id": "Jd9Ybhk_UOo2HtgpE0dEE",
+  "tags": []
+}
