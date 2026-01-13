@@ -1,0 +1,574 @@
+{
+  "name": "n8n-nodes-types",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -544,
+        80
+      ],
+      "id": "3ca64f3e-7626-4b78-b391-25db4457b9e0",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.4,
+      "position": [
+        -544,
+        320
+      ],
+      "id": "de37a9fd-82c4-4cec-9fe3-a52f2e859100",
+      "name": "Form",
+      "webhookId": "b7eeb6b9-aafa-4e7e-91d4-5eaa560e3e21"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -288,
+        80
+      ],
+      "id": "c40356c6-72c3-4055-a171-f3fb06a27768",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "path": "5c91d42c-a471-4529-b049-4538a460ee5d",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -48,
+        64
+      ],
+      "id": "b1e19f74-4b46-4568-86d5-09fc5a396113",
+      "name": "Webhook",
+      "webhookId": "5c91d42c-a471-4529-b049-4538a460ee5d"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -272,
+        320
+      ],
+      "id": "d5e9c975-7bbe-4bf9-a92a-74e93a0947a8",
+      "name": "Execute Workflow"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -16,
+        320
+      ],
+      "id": "0533b3be-1284-4200-8e37-0a743bac0027",
+      "name": "When chat message received",
+      "webhookId": "3f3fe1a8-a63c-48da-9824-7aa7ef3579eb"
+    },
+    {
+      "parameters": {
+        "content": "# Trigger Nodes Workflow initiaux",
+        "height": 608,
+        "width": 896
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -672,
+        -48
+      ],
+      "typeVersion": 1,
+      "id": "0ed23733-481a-4a0c-a4b6-c37a9a774fcd",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Actions Nodes - Integrations & Apps",
+        "height": 720,
+        "width": 800,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        256,
+        -48
+      ],
+      "typeVersion": 1,
+      "id": "4cbf1b6f-495b-4c6a-b992-17fddb9fde43",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        320,
+        64
+      ],
+      "id": "ef699bd9-d135-440f-b2f0-35cdfec68d38",
+      "name": "Add label to message",
+      "webhookId": "e87e2859-83ca-4b60-8734-7b460b291f47"
+    },
+    {
+      "parameters": {
+        "messages": {
+          "message": [
+            {}
+          ]
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.perplexity",
+      "typeVersion": 1,
+      "position": [
+        592,
+        64
+      ],
+      "id": "08af1aee-c9f1-4e46-b68b-ea3ae2d5495f",
+      "name": "Message a model"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        864,
+        64
+      ],
+      "id": "ff632fb9-686f-476c-9e77-48d8515414ee",
+      "name": "Get an issue",
+      "webhookId": "985091c0-1444-4aae-8537-91670643dcb1"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        320,
+        288
+      ],
+      "id": "e110e104-266f-40c5-ac44-eab22c4a79ee",
+      "name": "Get a channel"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        864,
+        288
+      ],
+      "id": "7a405bcc-77f7-4206-958a-0489e3afecca",
+      "name": "Generate audio"
+    },
+    {
+      "parameters": {
+        "pageId": {
+          "__rl": true,
+          "mode": "url",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        592,
+        288
+      ],
+      "id": "e7bbcca3-9998-4918-bf2a-cfd91cddf012",
+      "name": "Create a page"
+    },
+    {
+      "parameters": {
+        "resource": "spreadsheet",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        320,
+        512
+      ],
+      "id": "ce23559a-9e6c-4c7c-889a-c4ab747d2cdd",
+      "name": "Create spreadsheet"
+    },
+    {
+      "parameters": {
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.jinaAi",
+      "typeVersion": 1,
+      "position": [
+        592,
+        512
+      ],
+      "id": "a8262eb7-04b7-489a-9abe-5afa64139dc6",
+      "name": "Read URL content"
+    },
+    {
+      "parameters": {
+        "resource": "bucket",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        864,
+        512
+      ],
+      "id": "b941d31d-5485-4bff-9ea9-cea77232ea9a",
+      "name": "Create a bucket"
+    },
+    {
+      "parameters": {
+        "content": "# HTTP Request Node",
+        "height": 608,
+        "width": 624,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1136,
+        -32
+      ],
+      "typeVersion": 1,
+      "id": "986f144b-0db2-4a47-8a16-cb4bc215a77b",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# Logic Node - Control the data  flows",
+        "height": 768,
+        "width": 784,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1856,
+        -128
+      ],
+      "typeVersion": 1,
+      "id": "ccd6bb9e-ee34-4a53-8569-0ae4b34b2b5e",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "22576785-0c48-4398-bb12-9aaa255ab34c",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1888,
+        0
+      ],
+      "id": "d225ab5c-85cd-4d48-bad1-acc32ee0751e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2160,
+        0
+      ],
+      "id": "8945870c-fce9-47cf-9885-e9b0ec18f5c4",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1392,
+        224
+      ],
+      "id": "1559c768-cda6-423b-90e7-cc78c9676fb3",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2416,
+        0
+      ],
+      "id": "70137878-a3b2-4ef6-83b5-40d7ee5d0d7a",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "91da6b6a-1c4e-468e-a0e9-9a7775a69af2",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        1904,
+        240
+      ],
+      "id": "bc3ac575-e389-46b8-a237-a9df69b82d84",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "# Loop over input items and add a new field called 'my_new_field' to the JSON of each one\nfor item in _items:\n  item[\"json\"][\"my_new_field\"] = 1\nreturn _items"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2160,
+        240
+      ],
+      "id": "bfdf5518-3501-42c2-9cd1-423f9c1e57df",
+      "name": "Code in Python (Native)"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2432,
+        240
+      ],
+      "id": "f12d8249-fb54-41ab-bca9-1fa47ae71d2d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2144,
+        480
+      ],
+      "id": "aea298dd-568c-4361-8216-4fffecc29dc4",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1904,
+        480
+      ],
+      "id": "9cb34a82-b8f2-444c-8189-f06690c27f28",
+      "name": "Wait",
+      "webhookId": "daa00692-f4d9-4966-b95f-e8e2a56545cf"
+    },
+    {
+      "parameters": {
+        "operation": "compress"
+      },
+      "type": "n8n-nodes-base.compression",
+      "typeVersion": 1.1,
+      "position": [
+        2432,
+        480
+      ],
+      "id": "43c913fc-b05e-444d-aa8c-e9a334f227c2",
+      "name": "Compression"
+    },
+    {
+      "parameters": {
+        "content": "# AI Agent Node - Brain , Memory & Tools",
+        "height": 608,
+        "width": 608,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2832,
+        -32
+      ],
+      "typeVersion": 1,
+      "id": "e2444c09-93ab-4dfa-aee3-dcf68623b8a1",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        3024,
+        160
+      ],
+      "id": "1b25ca30-764f-4dad-8834-8371d25dd73c",
+      "name": "AI Agent",
+      "executeOnce": false,
+      "retryOnFail": true,
+      "notesInFlow": false
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Message a model": {
+      "main": [
+        []
+      ]
+    },
+    "Get a channel": {
+      "main": [
+        []
+      ]
+    },
+    "Generate audio": {
+      "main": [
+        []
+      ]
+    },
+    "Create spreadsheet": {
+      "main": [
+        []
+      ]
+    },
+    "Read URL content": {
+      "main": [
+        []
+      ]
+    },
+    "If": {
+      "main": [
+        []
+      ]
+    },
+    "Split Out": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        []
+      ]
+    },
+    "Filter": {
+      "main": [
+        []
+      ]
+    },
+    "Code in Python (Native)": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        []
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "47cdf55a-3147-4da2-af8b-985875a0579e",
+  "meta": {
+    "instanceId": "9658c92e204e680fa78e8391ac8181ef476afff007519e6c6dbe3ec9fbf8487f"
+  },
+  "id": "7qWkDewZpj-cxzcPl_W65",
+  "tags": []
+}
