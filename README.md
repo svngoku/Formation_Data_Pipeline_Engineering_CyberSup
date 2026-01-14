@@ -84,12 +84,83 @@ python scripts/validate_data.py --input-file data/bronze/partition_date=2024-01-
 cd dbt && dbt run && dbt test
 ```
 
+## 🌬️ Airflow - Exemples de DAGs
+
+Le dossier `airflow/` contient 3 exemples progressifs pour apprendre Airflow :
+
+| Fichier | Description |
+|---------|-------------|
+| `01_basic_dag.py` | Structure de base d'une DAG (default_args, schedule) |
+| `02_python_operator_etl.py` | Pipeline ETL avec PythonOperator et XCom |
+| `03_bash_operator_scripts.py` | Orchestration de scripts externes avec BashOperator |
+
+### Déployer les DAGs dans Airflow
+
+```bash
+# Copier les DAGs dans le dossier monté par Docker Compose
+cp airflow/*.py airflow/dags/
+```
+
+### Utiliser Airflow avec Docker Compose (Recommandé)
+
+```bash
+# Lister les DAGs disponibles
+docker compose exec airflow-webserver airflow dags list
+
+# Tester une DAG (exécution simulée)
+docker compose exec airflow-webserver airflow dags test basic_dag_intro 2025-01-01
+docker compose exec airflow-webserver airflow dags test etl_python_operator_example 2025-01-01
+docker compose exec airflow-webserver airflow dags test bash_operator_scripts_example 2025-01-01
+
+# Déclencher une DAG manuellement
+docker compose exec airflow-webserver airflow dags trigger etl_python_operator_example
+
+# Activer une DAG (requise avant exécution planifiée)
+docker compose exec airflow-webserver airflow dags unpause basic_dag_intro
+docker compose exec airflow-webserver airflow dags unpause etl_python_operator_example
+docker compose exec airflow-webserver airflow dags unpause bash_operator_scripts_example
+```
+
+### Alias recommandé (optionnel)
+
+Ajouter dans `~/.zshrc` ou `~/.bashrc` :
+
+```bash
+alias airflow-cli="docker compose exec airflow-webserver airflow"
+```
+
+Puis utiliser :
+
+```bash
+airflow-cli dags list
+airflow-cli dags trigger etl_python_operator_example
+airflow-cli dags test basic_dag_intro 2025-01-01
+```
+
+### Tester les DAGs localement (sans Docker)
+
+```bash
+# Valider la syntaxe Python
+python -m py_compile airflow/01_basic_dag.py
+python -m py_compile airflow/02_python_operator_etl.py
+python -m py_compile airflow/03_bash_operator_scripts.py
+```
+
+### Interface Web
+
+Accéder à http://localhost:8080 (credentials: `admin` / `admin`) pour :
+- Visualiser les DAGs et leur état
+- Déclencher manuellement une exécution
+- Consulter les logs des tasks
+
 ## 📁 Structure du projet
 
 ```
 data-pipeline/
-├── 📂 airflow/
-│   └── dags/                # DAGs Airflow
+├── 📂 airflow/              # Exemples de DAGs Airflow
+│   ├── 01_basic_dag.py
+│   ├── 02_python_operator_etl.py
+│   └── 03_bash_operator_scripts.py
 ├── 📂 dbt/                  # Projet dbt
 │   ├── models/
 │   │   ├── staging/         # Silver layer

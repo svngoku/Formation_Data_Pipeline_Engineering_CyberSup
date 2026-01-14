@@ -28,10 +28,10 @@ x-airflow-common: &airflow-common
       dbt-duckdb>=1.7.0
       pydantic-settings>=2.0.0
   volumes:
-    - ../airflow/dags:/opt/airflow/dags
-    - ../scripts:/opt/airflow/scripts
-    - ../data:/opt/airflow/data
-    - ../dbt:/opt/airflow/dbt
+    - ./airflow/dags:/opt/airflow/dags
+    - ./scripts:/opt/airflow/scripts
+    - ./data:/opt/airflow/data
+    - ./dbt:/opt/airflow/dbt
     - airflow-logs:/opt/airflow/logs
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
@@ -84,7 +84,7 @@ services:
       _AIRFLOW_WWW_USER_PASSWORD: admin
     user: "0:0"
     volumes:
-      - ../airflow:/sources
+      - ./airflow:/sources
 
   # ---------------------------------------------------------------------------
   # Airflow Webserver - Interface web
@@ -141,9 +141,9 @@ services:
       - GENERIC_TIMEZONE=Europe/Paris
     volumes:
       - n8n-data:/home/node/.n8n
-      - ../scripts:/home/node/scripts:ro
-      - ../data:/home/node/data
-      - ../n8n/workflows:/home/node/workflows
+      - ./scripts:/home/node/scripts:ro
+      - ./data:/home/node/data
+      - ./n8n/workflows:/home/node/workflows
     restart: unless-stopped
 
   # ---------------------------------------------------------------------------
