@@ -1,0 +1,1003 @@
+[0m11:42:58.312621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c59220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089b92b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089b9220>]}
+
+
+============================== 11:42:58.336331 | 69404cab-bbb8-4b98-804d-8c0b9347d548 ==============================
+[0m11:42:58.336331 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:42:58.336698 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'indirect_selection': 'eager', 'fail_fast': 'False', 'use_colors': 'True', 'debug': 'False', 'partial_parse': 'True', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'printer_width': '80', 'target_path': 'None', 'no_print': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt debug --profiles-dir /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'empty': 'None', 'quiet': 'False', 'write_json': 'True', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'static_parser': 'True', 'log_format': 'default'}
+[0m11:42:58.380801 [info ] [MainThread]: dbt version: 1.11.2
+[0m11:42:58.381095 [info ] [MainThread]: python version: 3.12.9
+[0m11:42:58.381260 [info ] [MainThread]: python path: /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/bin/python3
+[0m11:42:58.381410 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit
+[0m11:42:58.445709 [info ] [MainThread]: Using profiles dir at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt
+[0m11:42:58.446050 [info ] [MainThread]: Using profiles.yml file at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/profiles.yml
+[0m11:42:58.446214 [info ] [MainThread]: Using dbt_project.yml file at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/dbt_project.yml
+[0m11:42:58.446743 [info ] [MainThread]: adapter type: postgres
+[0m11:42:58.446954 [info ] [MainThread]: adapter version: 1.10.0
+[0m11:42:58.508507 [info ] [MainThread]: Configuration:
+[0m11:42:58.508795 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:42:58.508950 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:42:58.509092 [info ] [MainThread]: Required dependencies:
+[0m11:42:58.509300 [debug] [MainThread]: Executing "git --help"
+[0m11:42:58.519730 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:42:58.520848 [debug] [MainThread]: STDERR: "b''"
+[0m11:42:58.521371 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:42:58.521697 [info ] [MainThread]: Connection:
+[0m11:42:58.522222 [info ] [MainThread]:   host: localhost
+[0m11:42:58.522576 [info ] [MainThread]:   port: 5432
+[0m11:42:58.522716 [info ] [MainThread]:   user: postgres
+[0m11:42:58.522843 [info ] [MainThread]:   database: postgres
+[0m11:42:58.522967 [info ] [MainThread]:   schema: analytics
+[0m11:42:58.523095 [info ] [MainThread]:   connect_timeout: 10
+[0m11:42:58.523220 [info ] [MainThread]:   role: None
+[0m11:42:58.523340 [info ] [MainThread]:   search_path: None
+[0m11:42:58.523461 [info ] [MainThread]:   keepalives_idle: 0
+[0m11:42:58.523580 [info ] [MainThread]:   sslmode: None
+[0m11:42:58.523766 [info ] [MainThread]:   sslcert: None
+[0m11:42:58.524127 [info ] [MainThread]:   sslkey: None
+[0m11:42:58.524284 [info ] [MainThread]:   sslrootcert: None
+[0m11:42:58.524421 [info ] [MainThread]:   application_name: dbt
+[0m11:42:58.524551 [info ] [MainThread]:   retries: 1
+[0m11:42:58.524948 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m11:42:58.656552 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m11:42:58.702551 [debug] [MainThread]: Using postgres connection "debug"
+[0m11:42:58.702836 [debug] [MainThread]: On debug: select 1 as id
+[0m11:42:58.702988 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:42:59.141310 [debug] [MainThread]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+[0m11:42:59.282808 [debug] [MainThread]: Postgres adapter: Error running SQL: select 1 as id
+[0m11:42:59.283223 [debug] [MainThread]: Postgres adapter: Rolling back transaction.
+[0m11:42:59.283433 [debug] [MainThread]: On debug: No close available on handle
+[0m11:42:59.283639 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m11:42:59.283832 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:42:59.283974 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+  
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m11:42:59.288093 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.0441195, "process_in_blocks": "0", "process_kernel_time": 0.319879, "process_mem_max_rss": "147308544", "process_out_blocks": "0", "process_user_time": 1.040526}
+[0m11:42:59.288533 [debug] [MainThread]: Command `dbt debug` failed at 11:42:59.288440 after 1.04 seconds
+[0m11:42:59.288775 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:42:59.288992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108fdf020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089b9220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ae8320>]}
+[0m11:42:59.289255 [debug] [MainThread]: Flushing usage events
+[0m11:43:09.227921 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:43:56.067267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10998e3f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e593a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e59310>]}
+
+
+============================== 11:43:56.070936 | b50868e6-ca69-4681-ac66-6e465107ab29 ==============================
+[0m11:43:56.070936 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:43:56.071313 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'invocation_command': 'dbt debug', 'quiet': 'False', 'fail_fast': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'write_json': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'static_parser': 'True', 'target_path': 'None', 'no_print': 'None', 'debug': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'log_format': 'default', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'log_cache_events': 'False'}
+[0m11:43:56.081445 [info ] [MainThread]: dbt version: 1.11.2
+[0m11:43:56.081851 [info ] [MainThread]: python version: 3.12.9
+[0m11:43:56.082110 [info ] [MainThread]: python path: /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/bin/python3
+[0m11:43:56.082279 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit
+[0m11:43:56.130685 [info ] [MainThread]: Using profiles dir at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt
+[0m11:43:56.130979 [info ] [MainThread]: Using profiles.yml file at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/profiles.yml
+[0m11:43:56.131137 [info ] [MainThread]: Using dbt_project.yml file at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/dbt_project.yml
+[0m11:43:56.131553 [info ] [MainThread]: adapter type: postgres
+[0m11:43:56.148103 [info ] [MainThread]: adapter version: 1.10.0
+[0m11:43:56.210459 [info ] [MainThread]: Configuration:
+[0m11:43:56.210755 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:43:56.210920 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:43:56.211066 [info ] [MainThread]: Required dependencies:
+[0m11:43:56.211333 [debug] [MainThread]: Executing "git --help"
+[0m11:43:56.220427 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:43:56.221157 [debug] [MainThread]: STDERR: "b''"
+[0m11:43:56.221447 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:43:56.221671 [info ] [MainThread]: Connection:
+[0m11:43:56.221856 [info ] [MainThread]:   host: localhost
+[0m11:43:56.222193 [info ] [MainThread]:   port: 5432
+[0m11:43:56.222390 [info ] [MainThread]:   user: postgres
+[0m11:43:56.222534 [info ] [MainThread]:   database: postgres
+[0m11:43:56.222668 [info ] [MainThread]:   schema: analytics
+[0m11:43:56.222797 [info ] [MainThread]:   connect_timeout: 10
+[0m11:43:56.222923 [info ] [MainThread]:   role: None
+[0m11:43:56.223047 [info ] [MainThread]:   search_path: None
+[0m11:43:56.223168 [info ] [MainThread]:   keepalives_idle: 0
+[0m11:43:56.223286 [info ] [MainThread]:   sslmode: None
+[0m11:43:56.223407 [info ] [MainThread]:   sslcert: None
+[0m11:43:56.223531 [info ] [MainThread]:   sslkey: None
+[0m11:43:56.223651 [info ] [MainThread]:   sslrootcert: None
+[0m11:43:56.223776 [info ] [MainThread]:   application_name: dbt
+[0m11:43:56.223896 [info ] [MainThread]:   retries: 1
+[0m11:43:56.224295 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m11:43:56.320088 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m11:43:56.353950 [debug] [MainThread]: Using postgres connection "debug"
+[0m11:43:56.354226 [debug] [MainThread]: On debug: select 1 as id
+[0m11:43:56.354393 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:43:56.427707 [debug] [MainThread]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+[0m11:43:56.440793 [debug] [MainThread]: Postgres adapter: Error running SQL: select 1 as id
+[0m11:43:56.441063 [debug] [MainThread]: Postgres adapter: Rolling back transaction.
+[0m11:43:56.441245 [debug] [MainThread]: On debug: No close available on handle
+[0m11:43:56.441429 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m11:43:56.441599 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:43:56.441746 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+  
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m11:43:56.444379 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.42034674, "process_in_blocks": "0", "process_kernel_time": 0.25844, "process_mem_max_rss": "133185536", "process_out_blocks": "0", "process_user_time": 0.981977}
+[0m11:43:56.444709 [debug] [MainThread]: Command `dbt debug` failed at 11:43:56.444651 after 0.42 seconds
+[0m11:43:56.444909 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:43:56.445100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a199880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10996e030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b20350>]}
+[0m11:43:56.445321 [debug] [MainThread]: Flushing usage events
+[0m11:43:57.376146 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:02:37.454684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1083a38f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094bfaa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094bf5f0>]}
+
+
+============================== 15:02:37.480148 | 657ba7b9-3551-42ad-87c9-063f8dc9d2ea ==============================
+[0m15:02:37.480148 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:02:37.480641 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'static_parser': 'True', 'use_colors': 'True', 'partial_parse': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'version_check': 'True', 'warn_error': 'None', 'introspect': 'True', 'invocation_command': 'dbt debug', 'fail_fast': 'False', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'quiet': 'False', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'write_json': 'True', 'empty': 'None', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None'}
+[0m15:02:37.530626 [info ] [MainThread]: dbt version: 1.11.2
+[0m15:02:37.531066 [info ] [MainThread]: python version: 3.12.9
+[0m15:02:37.531283 [info ] [MainThread]: python path: /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/bin/python
+[0m15:02:37.531486 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit
+[0m15:02:37.640164 [info ] [MainThread]: Using profiles dir at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt
+[0m15:02:37.640486 [info ] [MainThread]: Using profiles.yml file at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/profiles.yml
+[0m15:02:37.640647 [info ] [MainThread]: Using dbt_project.yml file at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/dbt_project.yml
+[0m15:02:37.641608 [info ] [MainThread]: adapter type: postgres
+[0m15:02:37.641835 [info ] [MainThread]: adapter version: 1.10.0
+[0m15:02:37.705408 [info ] [MainThread]: Configuration:
+[0m15:02:37.705726 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:02:37.705894 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:02:37.706049 [info ] [MainThread]: Required dependencies:
+[0m15:02:37.706303 [debug] [MainThread]: Executing "git --help"
+[0m15:02:37.719005 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:02:37.720326 [debug] [MainThread]: STDERR: "b''"
+[0m15:02:37.720852 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:02:37.721347 [info ] [MainThread]: Connection:
+[0m15:02:37.721828 [info ] [MainThread]:   host: ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech
+[0m15:02:37.722270 [info ] [MainThread]:   port: 5432
+[0m15:02:37.722651 [info ] [MainThread]:   user: neondb_owner
+[0m15:02:37.723029 [info ] [MainThread]:   database: neondb
+[0m15:02:37.723457 [info ] [MainThread]:   schema: analytics
+[0m15:02:37.723845 [info ] [MainThread]:   connect_timeout: 10
+[0m15:02:37.724237 [info ] [MainThread]:   role: None
+[0m15:02:37.724601 [info ] [MainThread]:   search_path: None
+[0m15:02:37.724973 [info ] [MainThread]:   keepalives_idle: 0
+[0m15:02:37.725454 [info ] [MainThread]:   sslmode: None
+[0m15:02:37.725650 [info ] [MainThread]:   sslcert: None
+[0m15:02:37.725794 [info ] [MainThread]:   sslkey: None
+[0m15:02:37.726408 [info ] [MainThread]:   sslrootcert: None
+[0m15:02:37.726588 [info ] [MainThread]:   application_name: dbt
+[0m15:02:37.726732 [info ] [MainThread]:   retries: 1
+[0m15:02:37.727192 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:02:37.823948 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m15:02:37.873943 [debug] [MainThread]: Using postgres connection "debug"
+[0m15:02:37.874244 [debug] [MainThread]: On debug: select 1 as id
+[0m15:02:37.874412 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:03:38.054054 [error] [MainThread]: Encountered an error:
+
+[0m15:03:38.067629 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 237, in retry_connection
+    connection.handle = connect()
+                        ^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/postgres/connections.py", line 144, in connect
+    handle = psycopg2.connect(
+             ^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c09:1878:5b92:e72c:590b), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c12:9b09:3dde:dd28:b94f), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c27:d3ce:3c1:b24:3ee6), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.179.28.86), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.178.215.242), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (3.69.34.233), port 5432 failed: timeout expired
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 420, in debug
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/task/debug.py", line 144, in run
+    connection_status = self.test_connection()
+                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/task/debug.py", line 465, in test_connection
+    connection_result = self.attempt_connection(self.profile)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/task/debug.py", line 443, in attempt_connection
+    adapter.debug_query()
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/postgres/impl.py", line 157, in debug_query
+    self.execute("select 1 as id")
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt_common/record.py", line 538, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/base/impl.py", line 471, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/sql/connections.py", line 219, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/sql/connections.py", line 147, in add_query
+    cursor = connection.handle.cursor()
+             ^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/postgres/connections.py", line 176, in open
+    return cls.retry_connection(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 241, in retry_connection
+    except tuple(retryable_exceptions) as e:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m15:03:38.078917 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 60.695908, "process_in_blocks": "0", "process_kernel_time": 0.879303, "process_mem_max_rss": "152715264", "process_out_blocks": "0", "process_user_time": 2.224796}
+[0m15:03:38.079446 [debug] [MainThread]: Command `dbt debug` failed at 15:03:38.079371 after 60.70 seconds
+[0m15:03:38.079809 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:03:38.080095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093c86e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10702ffb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10950be30>]}
+[0m15:03:38.080420 [debug] [MainThread]: Flushing usage events
+[0m15:03:38.544605 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:03:49.603274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c840b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c818a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c818b00>]}
+
+
+============================== 15:03:49.606924 | c233e86c-d17d-46df-9450-adc863aa99ff ==============================
+[0m15:03:49.606924 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:03:49.607263 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'cache_selected_only': 'False', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'log_cache_events': 'False', 'no_print': 'None', 'introspect': 'True', 'use_colors': 'True', 'warn_error': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'target_path': 'None', 'fail_fast': 'False', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'static_parser': 'True', 'write_json': 'True', 'debug': 'False', 'version_check': 'True', 'log_format': 'default'}
+[0m15:03:49.722240 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c233e86c-d17d-46df-9450-adc863aa99ff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c818560>]}
+[0m15:03:49.753398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c233e86c-d17d-46df-9450-adc863aa99ff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d519dc0>]}
+[0m15:03:49.754241 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:03:49.849784 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m15:03:49.850301 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:03:49.850503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c233e86c-d17d-46df-9450-adc863aa99ff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dbc27b0>]}
+[0m15:03:50.444805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c233e86c-d17d-46df-9450-adc863aa99ff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6ad8b0>]}
+[0m15:03:50.483060 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/manifest.json
+[0m15:03:50.484734 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/semantic_manifest.json
+[0m15:03:50.505931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c233e86c-d17d-46df-9450-adc863aa99ff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e67dca0>]}
+[0m15:03:50.506250 [info ] [MainThread]: Found 2 models, 1 source, 464 macros
+[0m15:03:50.506428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c233e86c-d17d-46df-9450-adc863aa99ff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e5fa8d0>]}
+[0m15:03:50.507320 [info ] [MainThread]: 
+[0m15:03:50.507509 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:03:50.507653 [info ] [MainThread]: 
+[0m15:03:50.507899 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:03:50.509854 [debug] [ThreadPool]: Acquiring new postgres connection 'list_neondb'
+[0m15:03:50.560150 [debug] [ThreadPool]: Using postgres connection "list_neondb"
+[0m15:03:50.560412 [debug] [ThreadPool]: On list_neondb: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:03:50.560565 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:04:50.632232 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c09:1878:5b92:e72c:590b), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c12:9b09:3dde:dd28:b94f), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c27:d3ce:3c1:b24:3ee6), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.179.28.86), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.178.215.242), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (3.69.34.233), port 5432 failed: timeout expired
+
+[0m15:05:50.675803 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:05:50.676390 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m15:05:50.676978 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m15:05:50.677162 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m15:05:50.677437 [debug] [ThreadPool]: On list_neondb: No close available on handle
+[0m15:05:50.679559 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:05:50.679786 [debug] [MainThread]: Connection 'list_neondb' was properly closed.
+[0m15:05:50.680242 [info ] [MainThread]: 
+[0m15:05:50.680703 [info ] [MainThread]: Finished running  in 0 hours 2 minutes and 0.17 seconds (120.17s).
+[0m15:05:50.681690 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c09:1878:5b92:e72c:590b), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c12:9b09:3dde:dd28:b94f), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c27:d3ce:3c1:b24:3ee6), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.179.28.86), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.178.215.242), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (3.69.34.233), port 5432 failed: timeout expired
+  
+[0m15:05:50.688551 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 121.132774, "process_in_blocks": "0", "process_kernel_time": 0.280695, "process_mem_max_rss": "139821056", "process_out_blocks": "0", "process_user_time": 1.564553}
+[0m15:05:50.689591 [debug] [MainThread]: Command `dbt run` failed at 15:05:50.689288 after 121.13 seconds
+[0m15:05:50.691003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d51bda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e900f80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e4f0680>]}
+[0m15:05:50.691451 [debug] [MainThread]: Flushing usage events
+[0m15:05:51.188048 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:07:16.769722 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10da7e9f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dc67440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df917c0>]}
+
+
+============================== 15:07:16.773212 | 32d60ffd-dfc6-4e01-9b40-4322314df0c3 ==============================
+[0m15:07:16.773212 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:07:16.773690 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'printer_width': '80', 'indirect_selection': 'eager', 'version_check': 'True', 'log_cache_events': 'False', 'fail_fast': 'False', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'write_json': 'True', 'log_format': 'default', 'target_path': 'None', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'no_print': 'None', 'invocation_command': 'dbt test', 'empty': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True', 'static_parser': 'True'}
+[0m15:07:16.898772 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '32d60ffd-dfc6-4e01-9b40-4322314df0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d460470>]}
+[0m15:07:16.931162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '32d60ffd-dfc6-4e01-9b40-4322314df0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d460500>]}
+[0m15:07:16.931928 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:07:17.013594 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m15:07:17.094144 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:07:17.094568 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m15:07:17.094760 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:07:17.112460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '32d60ffd-dfc6-4e01-9b40-4322314df0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ee8f2f0>]}
+[0m15:07:17.149001 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/manifest.json
+[0m15:07:17.150676 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/semantic_manifest.json
+[0m15:07:17.248068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '32d60ffd-dfc6-4e01-9b40-4322314df0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f1ea9f0>]}
+[0m15:07:17.248472 [info ] [MainThread]: Found 2 models, 1 source, 464 macros
+[0m15:07:17.248678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '32d60ffd-dfc6-4e01-9b40-4322314df0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ee8f1a0>]}
+[0m15:07:17.249538 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m15:07:17.250544 [debug] [MainThread]: Command end result
+[0m15:07:17.260593 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/manifest.json
+[0m15:07:17.261651 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/semantic_manifest.json
+[0m15:07:17.263789 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/run_results.json
+[0m15:07:17.266208 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.543688, "process_in_blocks": "0", "process_kernel_time": 0.248999, "process_mem_max_rss": "166461440", "process_out_blocks": "0", "process_user_time": 1.131263}
+[0m15:07:17.266588 [debug] [MainThread]: Command `dbt test` succeeded at 15:07:17.266487 after 0.54 seconds
+[0m15:07:17.266891 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df917c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d407350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d405e80>]}
+[0m15:07:17.267122 [debug] [MainThread]: Flushing usage events
+[0m15:07:17.671008 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:09:05.775813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b677e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b280ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b280a40>]}
+
+
+============================== 15:09:05.779308 | 4a6fd7be-e835-4630-8251-dfde49a64879 ==============================
+[0m15:09:05.779308 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:09:05.779724 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'target_path': 'None', 'use_colors': 'True', 'indirect_selection': 'eager', 'quiet': 'False', 'static_parser': 'True', 'version_check': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt run --profiles-dir /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'use_experimental_parser': 'False', 'log_format': 'default', 'fail_fast': 'False', 'no_print': 'None', 'printer_width': '80', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'empty': 'False', 'introspect': 'True', 'debug': 'False', 'warn_error': 'None'}
+[0m15:09:05.910177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4a6fd7be-e835-4630-8251-dfde49a64879', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bfc60c0>]}
+[0m15:09:05.942089 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4a6fd7be-e835-4630-8251-dfde49a64879', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bd5fd40>]}
+[0m15:09:05.942962 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:09:06.035269 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m15:09:06.105238 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m15:09:06.105651 [debug] [MainThread]: Partial parsing: added file: n8n_dbt://models/staging/schema.yml
+[0m15:09:06.247678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4a6fd7be-e835-4630-8251-dfde49a64879', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d02be90>]}
+[0m15:09:06.290599 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/manifest.json
+[0m15:09:06.292611 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/semantic_manifest.json
+[0m15:09:06.315918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4a6fd7be-e835-4630-8251-dfde49a64879', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d1a46b0>]}
+[0m15:09:06.316262 [info ] [MainThread]: Found 2 models, 2 data tests, 1 source, 464 macros
+[0m15:09:06.316773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4a6fd7be-e835-4630-8251-dfde49a64879', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cfe9fa0>]}
+[0m15:09:06.318044 [info ] [MainThread]: 
+[0m15:09:06.318289 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:09:06.318445 [info ] [MainThread]: 
+[0m15:09:06.318773 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:09:06.320753 [debug] [ThreadPool]: Acquiring new postgres connection 'list_neondb'
+[0m15:09:06.387274 [debug] [ThreadPool]: Using postgres connection "list_neondb"
+[0m15:09:06.390467 [debug] [ThreadPool]: On list_neondb: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:09:06.390711 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:10:07.140029 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c09:1878:5b92:e72c:590b), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c12:9b09:3dde:dd28:b94f), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c27:d3ce:3c1:b24:3ee6), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.178.215.242), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (3.69.34.233), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.179.28.86), port 5432 failed: timeout expired
+
+[0m15:11:07.183693 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:11:07.186200 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m15:11:07.187723 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m15:11:07.189757 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m15:11:07.190238 [debug] [ThreadPool]: On list_neondb: No close available on handle
+[0m15:11:07.199169 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:11:07.199526 [debug] [MainThread]: Connection 'list_neondb' was properly closed.
+[0m15:11:07.200356 [info ] [MainThread]: 
+[0m15:11:07.200974 [info ] [MainThread]: Finished running  in 0 hours 2 minutes and 0.88 seconds (120.88s).
+[0m15:11:07.202902 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c09:1878:5b92:e72c:590b), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c12:9b09:3dde:dd28:b94f), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c27:d3ce:3c1:b24:3ee6), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.178.215.242), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (3.69.34.233), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.179.28.86), port 5432 failed: timeout expired
+  
+[0m15:11:07.209321 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 121.482376, "process_in_blocks": "0", "process_kernel_time": 0.310417, "process_mem_max_rss": "138575872", "process_out_blocks": "0", "process_user_time": 1.235176}
+[0m15:11:07.210087 [debug] [MainThread]: Command `dbt run` failed at 15:11:07.209971 after 121.48 seconds
+[0m15:11:07.210931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bbf6000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d1a61e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d1a4260>]}
+[0m15:11:07.212002 [debug] [MainThread]: Flushing usage events
+[0m15:11:08.827639 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:12:10.718627 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108852db0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10be37a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10be37590>]}
+
+
+============================== 15:12:10.733391 | 30125ae0-21e7-4b84-be77-3a7ab167e965 ==============================
+[0m15:12:10.733391 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:12:10.733908 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'indirect_selection': 'eager', 'partial_parse': 'True', 'cache_selected_only': 'False', 'use_colors': 'True', 'printer_width': '80', 'fail_fast': 'False', 'log_format': 'default', 'log_cache_events': 'False', 'no_print': 'None', 'warn_error': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'invocation_command': 'dbt run --profiles-dir /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'empty': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'target_path': 'None', 'debug': 'False', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'version_check': 'True'}
+[0m15:12:10.919884 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '30125ae0-21e7-4b84-be77-3a7ab167e965', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b7c3fb0>]}
+[0m15:12:10.964199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '30125ae0-21e7-4b84-be77-3a7ab167e965', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b752930>]}
+[0m15:12:10.965004 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:12:11.062661 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m15:12:11.151371 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m15:12:11.151748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '30125ae0-21e7-4b84-be77-3a7ab167e965', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b7fa6f0>]}
+[0m15:12:12.073349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '30125ae0-21e7-4b84-be77-3a7ab167e965', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cfcb320>]}
+[0m15:12:12.123351 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/manifest.json
+[0m15:12:12.125357 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/semantic_manifest.json
+[0m15:12:12.145210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '30125ae0-21e7-4b84-be77-3a7ab167e965', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d1787d0>]}
+[0m15:12:12.145567 [info ] [MainThread]: Found 2 models, 2 data tests, 1 source, 464 macros
+[0m15:12:12.145770 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '30125ae0-21e7-4b84-be77-3a7ab167e965', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d0cfb00>]}
+[0m15:12:12.146802 [info ] [MainThread]: 
+[0m15:12:12.147014 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:12:12.147371 [info ] [MainThread]: 
+[0m15:12:12.147752 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:12:12.149987 [debug] [ThreadPool]: Acquiring new postgres connection 'list_neondb'
+[0m15:12:12.205952 [debug] [ThreadPool]: Using postgres connection "list_neondb"
+[0m15:12:12.206246 [debug] [ThreadPool]: On list_neondb: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:12:12.206415 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:13:12.267589 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c09:1878:5b92:e72c:590b), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c27:d3ce:3c1:b24:3ee6), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c12:9b09:3dde:dd28:b94f), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.179.28.86), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (3.69.34.233), port 5432 failed: timeout expired
+connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.178.215.242), port 5432 failed: timeout expired
+
+[0m15:14:12.305197 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:14:12.307919 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m15:14:12.308819 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m15:14:12.313594 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m15:14:12.314026 [debug] [ThreadPool]: On list_neondb: No close available on handle
+[0m15:14:12.321807 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:14:12.322472 [debug] [MainThread]: Connection 'list_neondb' was properly closed.
+[0m15:14:12.324075 [info ] [MainThread]: 
+[0m15:14:12.326039 [info ] [MainThread]: Finished running  in 0 hours 2 minutes and 0.18 seconds (120.18s).
+[0m15:14:12.327024 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c09:1878:5b92:e72c:590b), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c27:d3ce:3c1:b24:3ee6), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (2a05:d014:1dff:c12:9b09:3dde:dd28:b94f), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.179.28.86), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (3.69.34.233), port 5432 failed: timeout expired
+  connection to server at "ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech" (63.178.215.242), port 5432 failed: timeout expired
+  
+[0m15:14:12.331596 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 121.693054, "process_in_blocks": "0", "process_kernel_time": 0.411344, "process_mem_max_rss": "141885440", "process_out_blocks": "0", "process_user_time": 2.066425}
+[0m15:14:12.333084 [debug] [MainThread]: Command `dbt run` failed at 15:14:12.332897 after 121.69 seconds
+[0m15:14:12.333899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10be37bc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d1270e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d0bcc50>]}
+[0m15:14:12.334536 [debug] [MainThread]: Flushing usage events
+[0m15:14:12.810309 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:15:31.504404 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ca57b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d2cf620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d2cf0b0>]}
+
+
+============================== 15:15:31.508251 | 9975d9d9-0fd7-4591-b9d7-5159b41b4de1 ==============================
+[0m15:15:31.508251 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:15:31.508646 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'write_json': 'True', 'quiet': 'False', 'partial_parse': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'version_check': 'True', 'invocation_command': 'dbt debug --profiles-dir /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'log_cache_events': 'False', 'warn_error': 'None', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'log_format': 'default', 'cache_selected_only': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'static_parser': 'True', 'target_path': 'None'}
+[0m15:15:31.520016 [info ] [MainThread]: dbt version: 1.11.2
+[0m15:15:31.520299 [info ] [MainThread]: python version: 3.12.9
+[0m15:15:31.520568 [info ] [MainThread]: python path: /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/.venv/bin/python
+[0m15:15:31.520725 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit
+[0m15:15:31.587268 [info ] [MainThread]: Using profiles dir at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt
+[0m15:15:31.587569 [info ] [MainThread]: Using profiles.yml file at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/profiles.yml
+[0m15:15:31.588042 [info ] [MainThread]: Using dbt_project.yml file at /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/dbt_project.yml
+[0m15:15:31.588639 [info ] [MainThread]: adapter type: postgres
+[0m15:15:31.588838 [info ] [MainThread]: adapter version: 1.10.0
+[0m15:15:31.646830 [info ] [MainThread]: Configuration:
+[0m15:15:31.647152 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:15:31.647312 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:15:31.647458 [info ] [MainThread]: Required dependencies:
+[0m15:15:31.647711 [debug] [MainThread]: Executing "git --help"
+[0m15:15:31.658190 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:15:31.658784 [debug] [MainThread]: STDERR: "b''"
+[0m15:15:31.659026 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:15:31.659238 [info ] [MainThread]: Connection:
+[0m15:15:31.659608 [info ] [MainThread]:   host: ep-sparkling-hall-agalkju4-pooler.c-2.eu-central-1.aws.neon.tech
+[0m15:15:31.659783 [info ] [MainThread]:   port: 5432
+[0m15:15:31.659994 [info ] [MainThread]:   user: neondb_owner
+[0m15:15:31.660184 [info ] [MainThread]:   database: neondb
+[0m15:15:31.660331 [info ] [MainThread]:   schema: analytics
+[0m15:15:31.660470 [info ] [MainThread]:   connect_timeout: 10
+[0m15:15:31.660602 [info ] [MainThread]:   role: None
+[0m15:15:31.660730 [info ] [MainThread]:   search_path: None
+[0m15:15:31.660856 [info ] [MainThread]:   keepalives_idle: 0
+[0m15:15:31.660979 [info ] [MainThread]:   sslmode: require
+[0m15:15:31.661098 [info ] [MainThread]:   sslcert: None
+[0m15:15:31.661325 [info ] [MainThread]:   sslkey: None
+[0m15:15:31.661498 [info ] [MainThread]:   sslrootcert: None
+[0m15:15:31.661635 [info ] [MainThread]:   application_name: dbt
+[0m15:15:31.661763 [info ] [MainThread]:   retries: 1
+[0m15:15:31.662176 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:15:31.754118 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m15:15:31.809878 [debug] [MainThread]: Using postgres connection "debug"
+[0m15:15:31.810165 [debug] [MainThread]: On debug: select 1 as id
+[0m15:15:31.810326 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:15:32.280155 [debug] [MainThread]: SQL status: SELECT 1 in 0.470 seconds
+[0m15:15:32.280877 [debug] [MainThread]: On debug: Close
+[0m15:15:32.281487 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:15:32.281796 [info ] [MainThread]: [32mAll checks passed![0m
+[0m15:15:32.285045 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.831966, "process_in_blocks": "0", "process_kernel_time": 0.297779, "process_mem_max_rss": "134348800", "process_out_blocks": "0", "process_user_time": 1.038274}
+[0m15:15:32.285434 [debug] [MainThread]: Command `dbt debug` succeeded at 15:15:32.285373 after 0.83 seconds
+[0m15:15:32.285641 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:15:32.285850 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cdc5670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d94be30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cc5a420>]}
+[0m15:15:32.286091 [debug] [MainThread]: Flushing usage events
+[0m15:15:32.804805 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:16:18.749201 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ab3fd40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b33bcb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b33b860>]}
+
+
+============================== 15:16:18.753253 | 5f35878a-8ab3-4ecf-aef8-2b9f1054e5d7 ==============================
+[0m15:16:18.753253 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:16:18.753703 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'write_json': 'True', 'printer_width': '80', 'empty': 'False', 'static_parser': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'debug': 'False', 'log_format': 'default', 'version_check': 'True', 'quiet': 'False', 'fail_fast': 'False', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'no_print': 'None', 'log_cache_events': 'False', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'invocation_command': 'dbt run --profiles-dir /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'use_colors': 'True', 'introspect': 'True', 'target_path': 'None', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:16:18.890334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5f35878a-8ab3-4ecf-aef8-2b9f1054e5d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089f9cd0>]}
+[0m15:16:18.925723 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5f35878a-8ab3-4ecf-aef8-2b9f1054e5d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b0a7fe0>]}
+[0m15:16:18.926513 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:16:19.023748 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m15:16:19.120978 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:16:19.121309 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m15:16:19.121475 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:16:19.156569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5f35878a-8ab3-4ecf-aef8-2b9f1054e5d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b40fd10>]}
+[0m15:16:19.209489 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/manifest.json
+[0m15:16:19.211213 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/semantic_manifest.json
+[0m15:16:19.227210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5f35878a-8ab3-4ecf-aef8-2b9f1054e5d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c3c6450>]}
+[0m15:16:19.227591 [info ] [MainThread]: Found 2 models, 2 data tests, 1 source, 464 macros
+[0m15:16:19.227858 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5f35878a-8ab3-4ecf-aef8-2b9f1054e5d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c387260>]}
+[0m15:16:19.229066 [info ] [MainThread]: 
+[0m15:16:19.229417 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:16:19.229588 [info ] [MainThread]: 
+[0m15:16:19.229882 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:16:19.231854 [debug] [ThreadPool]: Acquiring new postgres connection 'list_neondb'
+[0m15:16:19.270281 [debug] [ThreadPool]: Using postgres connection "list_neondb"
+[0m15:16:19.270694 [debug] [ThreadPool]: On list_neondb: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:16:19.270933 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:16:20.930752 [debug] [ThreadPool]: SQL status: SELECT 4 in 1.660 seconds
+[0m15:16:20.931775 [debug] [ThreadPool]: On list_neondb: Close
+[0m15:16:20.932802 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_neondb, now create_neondb_analytics)
+[0m15:16:20.933145 [debug] [ThreadPool]: Creating schema "database: "neondb"
+schema: "analytics"
+"
+[0m15:16:20.937369 [debug] [ThreadPool]: Using postgres connection "create_neondb_analytics"
+[0m15:16:20.937629 [debug] [ThreadPool]: On create_neondb_analytics: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "create_neondb_analytics"} */
+create schema if not exists "analytics"
+[0m15:16:20.937783 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:16:21.891363 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.954 seconds
+[0m15:16:21.892083 [debug] [ThreadPool]: On create_neondb_analytics: COMMIT
+[0m15:16:21.892283 [debug] [ThreadPool]: Using postgres connection "create_neondb_analytics"
+[0m15:16:21.892430 [debug] [ThreadPool]: On create_neondb_analytics: COMMIT
+[0m15:16:21.966512 [debug] [ThreadPool]: SQL status: COMMIT in 0.074 seconds
+[0m15:16:21.966835 [debug] [ThreadPool]: On create_neondb_analytics: Close
+[0m15:16:21.967681 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_neondb_analytics, now list_neondb_analytics)
+[0m15:16:21.971288 [debug] [ThreadPool]: Using postgres connection "list_neondb_analytics"
+[0m15:16:21.971582 [debug] [ThreadPool]: On list_neondb_analytics: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb_analytics"} */
+select
+      'neondb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'neondb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'neondb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m15:16:21.971793 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:16:22.361970 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.390 seconds
+[0m15:16:22.362795 [debug] [ThreadPool]: On list_neondb_analytics: ROLLBACK
+[0m15:16:22.407812 [debug] [ThreadPool]: On list_neondb_analytics: Close
+[0m15:16:22.412125 [debug] [MainThread]: Using postgres connection "master"
+[0m15:16:22.412400 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:16:22.412595 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:16:22.792023 [debug] [MainThread]: SQL status: SELECT 0 in 0.379 seconds
+[0m15:16:22.792900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5f35878a-8ab3-4ecf-aef8-2b9f1054e5d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c5deab0>]}
+[0m15:16:22.793270 [debug] [MainThread]: On master: ROLLBACK
+[0m15:16:22.840144 [debug] [MainThread]: On master: COMMIT
+[0m15:16:22.840458 [debug] [MainThread]: Using postgres connection "master"
+[0m15:16:22.840623 [debug] [MainThread]: On master: COMMIT
+[0m15:16:22.917718 [debug] [MainThread]: SQL status: COMMIT in 0.077 seconds
+[0m15:16:22.918034 [debug] [MainThread]: On master: Close
+[0m15:16:22.922952 [debug] [Thread-1 (]: Began running node model.n8n_dbt.stg_customers
+[0m15:16:22.923311 [info ] [Thread-1 (]: 1 of 2 START sql view model analytics.stg_customers ............................ [RUN]
+[0m15:16:22.923727 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_neondb_analytics, now model.n8n_dbt.stg_customers)
+[0m15:16:22.923970 [debug] [Thread-1 (]: Began compiling node model.n8n_dbt.stg_customers
+[0m15:16:22.928137 [debug] [Thread-1 (]: Writing injected SQL for node "model.n8n_dbt.stg_customers"
+[0m15:16:22.928980 [debug] [Thread-1 (]: Began executing node model.n8n_dbt.stg_customers
+[0m15:16:22.948196 [debug] [Thread-1 (]: Writing runtime sql for node "model.n8n_dbt.stg_customers"
+[0m15:16:22.949090 [debug] [Thread-1 (]: Using postgres connection "model.n8n_dbt.stg_customers"
+[0m15:16:22.949304 [debug] [Thread-1 (]: On model.n8n_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "node_id": "model.n8n_dbt.stg_customers"} */
+
+  create view "neondb"."analytics"."stg_customers__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "neondb"."raw"."customers"
+)
+
+select
+    id as customer_id,
+    first_name,
+    last_name,
+    email,
+    created_at
+from source
+  );
+[0m15:16:22.949486 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:16:23.390001 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "raw.customers" does not exist
+LINE 8:     select * from "neondb"."raw"."customers"
+                          ^
+
+[0m15:16:23.390341 [debug] [Thread-1 (]: On model.n8n_dbt.stg_customers: ROLLBACK
+[0m15:16:23.437719 [debug] [Thread-1 (]: On model.n8n_dbt.stg_customers: Close
+[0m15:16:23.444010 [debug] [Thread-1 (]: Database Error in model stg_customers (models/staging/stg_customers.sql)
+  relation "raw.customers" does not exist
+  LINE 8:     select * from "neondb"."raw"."customers"
+                            ^
+  compiled code at target/run/n8n_dbt/models/staging/stg_customers.sql
+[0m15:16:23.446572 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5f35878a-8ab3-4ecf-aef8-2b9f1054e5d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c063170>]}
+[0m15:16:23.447154 [error] [Thread-1 (]: 1 of 2 ERROR creating sql view model analytics.stg_customers ................... [[31mERROR[0m in 0.52s]
+[0m15:16:23.447638 [debug] [Thread-1 (]: Finished running node model.n8n_dbt.stg_customers
+[0m15:16:23.447975 [debug] [Thread-7 (]: Marking all children of 'model.n8n_dbt.stg_customers' to be skipped because of status 'error'.  Reason: Database Error in model stg_customers (models/staging/stg_customers.sql)
+  relation "raw.customers" does not exist
+  LINE 8:     select * from "neondb"."raw"."customers"
+                            ^
+  compiled code at target/run/n8n_dbt/models/staging/stg_customers.sql.
+[0m15:16:23.449243 [debug] [Thread-3 (]: Began running node model.n8n_dbt.dim_customers
+[0m15:16:23.449535 [info ] [Thread-3 (]: 2 of 2 SKIP relation analytics.dim_customers ................................... [[33mSKIP[0m]
+[0m15:16:23.449848 [debug] [Thread-3 (]: Finished running node model.n8n_dbt.dim_customers
+[0m15:16:23.451226 [debug] [MainThread]: On master: COMMIT
+[0m15:16:23.451426 [debug] [MainThread]: Using postgres connection "master"
+[0m15:16:23.451568 [debug] [MainThread]: On master: COMMIT
+[0m15:16:23.451697 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:16:23.808077 [debug] [MainThread]: SQL status: COMMIT in 0.356 seconds
+[0m15:16:23.808401 [debug] [MainThread]: On master: Close
+[0m15:16:23.808763 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:16:23.808912 [debug] [MainThread]: Connection 'model.n8n_dbt.stg_customers' was properly closed.
+[0m15:16:23.809075 [info ] [MainThread]: 
+[0m15:16:23.809240 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 4.58 seconds (4.58s).
+[0m15:16:23.809603 [debug] [MainThread]: Command end result
+[0m15:16:23.821273 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/manifest.json
+[0m15:16:23.822648 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/semantic_manifest.json
+[0m15:16:23.825949 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/run_results.json
+[0m15:16:23.826166 [info ] [MainThread]: 
+[0m15:16:23.826374 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m15:16:23.826535 [info ] [MainThread]: 
+[0m15:16:23.826723 [error] [MainThread]: [31mFailure in model stg_customers (models/staging/stg_customers.sql)[0m
+[0m15:16:23.826900 [error] [MainThread]:   Database Error in model stg_customers (models/staging/stg_customers.sql)
+  relation "raw.customers" does not exist
+  LINE 8:     select * from "neondb"."raw"."customers"
+                            ^
+  compiled code at target/run/n8n_dbt/models/staging/stg_customers.sql
+[0m15:16:23.827034 [info ] [MainThread]: 
+[0m15:16:23.827186 [info ] [MainThread]:   compiled code at target/compiled/n8n_dbt/models/staging/stg_customers.sql
+[0m15:16:23.827319 [info ] [MainThread]: 
+[0m15:16:23.827474 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 NO-OP=0 TOTAL=2
+[0m15:16:23.829753 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 5.135625, "process_in_blocks": "0", "process_kernel_time": 0.330755, "process_mem_max_rss": "141197312", "process_out_blocks": "0", "process_user_time": 1.328191}
+[0m15:16:23.830248 [debug] [MainThread]: Command `dbt run` failed at 15:16:23.830180 after 5.14 seconds
+[0m15:16:23.830609 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b33bb90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b33bcb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2ebc80>]}
+[0m15:16:23.830911 [debug] [MainThread]: Flushing usage events
+[0m15:16:24.317258 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:16:52.563985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d04980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a64800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a64890>]}
+
+
+============================== 15:16:52.567691 | 5983b0ba-493c-406f-b183-5010c2cdfd4a ==============================
+[0m15:16:52.567691 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:16:52.568080 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'introspect': 'True', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'log_cache_events': 'False', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'printer_width': '80', 'version_check': 'True', 'use_colors': 'True', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'log_format': 'default', 'no_print': 'None', 'invocation_command': 'dbt run --profiles-dir /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'write_json': 'True', 'indirect_selection': 'eager', 'empty': 'False', 'target_path': 'None'}
+[0m15:16:52.694022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5983b0ba-493c-406f-b183-5010c2cdfd4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109de8080>]}
+[0m15:16:52.741474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5983b0ba-493c-406f-b183-5010c2cdfd4a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109763860>]}
+[0m15:16:52.742326 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:16:52.848934 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m15:16:52.950711 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:16:52.951208 [debug] [MainThread]: Partial parsing: updated file: n8n_dbt://models/staging/stg_customers.sql
+[0m15:16:53.159743 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.n8n_dbt.stg_customers' (models/staging/stg_customers.sql) depends on a source named 'public.customers' which was not found
+[0m15:16:53.163027 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.64708245, "process_in_blocks": "0", "process_kernel_time": 0.271278, "process_mem_max_rss": "128139264", "process_out_blocks": "0", "process_user_time": 1.284639}
+[0m15:16:53.163410 [debug] [MainThread]: Command `dbt run` failed at 15:16:53.163350 after 0.65 seconds
+[0m15:16:53.163680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109082b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107adf530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a819fd0>]}
+[0m15:16:53.163901 [debug] [MainThread]: Flushing usage events
+[0m15:16:53.706077 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:19:59.038140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b591c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b889b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b88920>]}
+
+
+============================== 15:19:59.041845 | b3641b0e-3a54-4e63-ab70-192e31e667f1 ==============================
+[0m15:19:59.041845 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:19:59.042259 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'quiet': 'False', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --profiles-dir /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'target_path': 'None', 'printer_width': '80', 'introspect': 'True', 'no_print': 'None', 'warn_error': 'None', 'static_parser': 'True', 'use_colors': 'True', 'version_check': 'True', 'empty': 'False', 'debug': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'log_cache_events': 'False', 'indirect_selection': 'eager'}
+[0m15:19:59.183601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b3641b0e-3a54-4e63-ab70-192e31e667f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f11c40>]}
+[0m15:19:59.218315 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b3641b0e-3a54-4e63-ab70-192e31e667f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ad3e90>]}
+[0m15:19:59.219102 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:19:59.314832 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m15:19:59.401356 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:19:59.401755 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m15:19:59.401960 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:19:59.442242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b3641b0e-3a54-4e63-ab70-192e31e667f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f707a0>]}
+[0m15:19:59.489717 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/manifest.json
+[0m15:19:59.491587 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/semantic_manifest.json
+[0m15:19:59.508603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b3641b0e-3a54-4e63-ab70-192e31e667f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a90ea80>]}
+[0m15:19:59.508955 [info ] [MainThread]: Found 2 models, 2 data tests, 1 source, 464 macros
+[0m15:19:59.509155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b3641b0e-3a54-4e63-ab70-192e31e667f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a5923c0>]}
+[0m15:19:59.510214 [info ] [MainThread]: 
+[0m15:19:59.510433 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:19:59.510577 [info ] [MainThread]: 
+[0m15:19:59.510865 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:19:59.513051 [debug] [ThreadPool]: Acquiring new postgres connection 'list_neondb'
+[0m15:19:59.572281 [debug] [ThreadPool]: Using postgres connection "list_neondb"
+[0m15:19:59.572750 [debug] [ThreadPool]: On list_neondb: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:19:59.573020 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:19:59.972438 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.399 seconds
+[0m15:19:59.973399 [debug] [ThreadPool]: On list_neondb: Close
+[0m15:19:59.974695 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_neondb, now list_neondb_analytics)
+[0m15:19:59.979627 [debug] [ThreadPool]: Using postgres connection "list_neondb_analytics"
+[0m15:19:59.979906 [debug] [ThreadPool]: On list_neondb_analytics: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "list_neondb_analytics"} */
+select
+      'neondb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'neondb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'neondb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m15:19:59.980079 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:20:00.667169 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.687 seconds
+[0m15:20:00.669335 [debug] [ThreadPool]: On list_neondb_analytics: ROLLBACK
+[0m15:20:00.712521 [debug] [ThreadPool]: On list_neondb_analytics: Close
+[0m15:20:00.715726 [debug] [MainThread]: Using postgres connection "master"
+[0m15:20:00.716056 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:20:00.716275 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:20:01.138835 [debug] [MainThread]: SQL status: SELECT 0 in 0.422 seconds
+[0m15:20:01.139702 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b3641b0e-3a54-4e63-ab70-192e31e667f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10995ede0>]}
+[0m15:20:01.140010 [debug] [MainThread]: On master: ROLLBACK
+[0m15:20:01.188458 [debug] [MainThread]: On master: COMMIT
+[0m15:20:01.188773 [debug] [MainThread]: Using postgres connection "master"
+[0m15:20:01.188932 [debug] [MainThread]: On master: COMMIT
+[0m15:20:01.278455 [debug] [MainThread]: SQL status: COMMIT in 0.089 seconds
+[0m15:20:01.278821 [debug] [MainThread]: On master: Close
+[0m15:20:01.281742 [debug] [Thread-1 (]: Began running node model.n8n_dbt.stg_customers
+[0m15:20:01.282103 [info ] [Thread-1 (]: 1 of 2 START sql view model analytics.stg_customers ............................ [RUN]
+[0m15:20:01.282387 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_neondb_analytics, now model.n8n_dbt.stg_customers)
+[0m15:20:01.282644 [debug] [Thread-1 (]: Began compiling node model.n8n_dbt.stg_customers
+[0m15:20:01.287246 [debug] [Thread-1 (]: Writing injected SQL for node "model.n8n_dbt.stg_customers"
+[0m15:20:01.287850 [debug] [Thread-1 (]: Began executing node model.n8n_dbt.stg_customers
+[0m15:20:01.306525 [debug] [Thread-1 (]: Writing runtime sql for node "model.n8n_dbt.stg_customers"
+[0m15:20:01.307154 [debug] [Thread-1 (]: Using postgres connection "model.n8n_dbt.stg_customers"
+[0m15:20:01.307356 [debug] [Thread-1 (]: On model.n8n_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "node_id": "model.n8n_dbt.stg_customers"} */
+
+  create view "neondb"."analytics"."stg_customers__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "neondb"."raw"."customers"
+)
+
+select
+    id as customer_id,
+    first_name,
+    last_name,
+    email,
+    created_at
+from source
+  );
+[0m15:20:01.307534 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:20:01.701156 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.394 seconds
+[0m15:20:01.705140 [debug] [Thread-1 (]: Using postgres connection "model.n8n_dbt.stg_customers"
+[0m15:20:01.705401 [debug] [Thread-1 (]: On model.n8n_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "node_id": "model.n8n_dbt.stg_customers"} */
+alter table "neondb"."analytics"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m15:20:01.767890 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.062 seconds
+[0m15:20:01.776023 [debug] [Thread-1 (]: On model.n8n_dbt.stg_customers: COMMIT
+[0m15:20:01.776337 [debug] [Thread-1 (]: Using postgres connection "model.n8n_dbt.stg_customers"
+[0m15:20:01.776529 [debug] [Thread-1 (]: On model.n8n_dbt.stg_customers: COMMIT
+[0m15:20:01.826463 [debug] [Thread-1 (]: SQL status: COMMIT in 0.050 seconds
+[0m15:20:01.830085 [debug] [Thread-1 (]: Applying DROP to: "neondb"."analytics"."stg_customers__dbt_backup"
+[0m15:20:01.832701 [debug] [Thread-1 (]: Using postgres connection "model.n8n_dbt.stg_customers"
+[0m15:20:01.832948 [debug] [Thread-1 (]: On model.n8n_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "node_id": "model.n8n_dbt.stg_customers"} */
+drop view if exists "neondb"."analytics"."stg_customers__dbt_backup" cascade
+[0m15:20:01.867250 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.034 seconds
+[0m15:20:01.868815 [debug] [Thread-1 (]: On model.n8n_dbt.stg_customers: Close
+[0m15:20:01.870479 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b3641b0e-3a54-4e63-ab70-192e31e667f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad2f6b0>]}
+[0m15:20:01.871103 [info ] [Thread-1 (]: 1 of 2 OK created sql view model analytics.stg_customers ....................... [[32mCREATE VIEW[0m in 0.59s]
+[0m15:20:01.871508 [debug] [Thread-1 (]: Finished running node model.n8n_dbt.stg_customers
+[0m15:20:01.872514 [debug] [Thread-3 (]: Began running node model.n8n_dbt.dim_customers
+[0m15:20:01.872852 [info ] [Thread-3 (]: 2 of 2 START sql table model analytics.dim_customers ........................... [RUN]
+[0m15:20:01.873178 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.n8n_dbt.dim_customers'
+[0m15:20:01.873578 [debug] [Thread-3 (]: Began compiling node model.n8n_dbt.dim_customers
+[0m15:20:01.875382 [debug] [Thread-3 (]: Writing injected SQL for node "model.n8n_dbt.dim_customers"
+[0m15:20:01.876756 [debug] [Thread-3 (]: Began executing node model.n8n_dbt.dim_customers
+[0m15:20:01.891496 [debug] [Thread-3 (]: Writing runtime sql for node "model.n8n_dbt.dim_customers"
+[0m15:20:01.892270 [debug] [Thread-3 (]: Using postgres connection "model.n8n_dbt.dim_customers"
+[0m15:20:01.892490 [debug] [Thread-3 (]: On model.n8n_dbt.dim_customers: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "node_id": "model.n8n_dbt.dim_customers"} */
+
+  
+    
+
+  create  table "neondb"."analytics"."dim_customers__dbt_tmp"
+  
+  
+    as
+  
+  (
+    select
+    customer_id,
+    first_name,
+    last_name,
+    email,
+    created_at
+from "neondb"."analytics"."stg_customers"
+  );
+  
+[0m15:20:01.892676 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:20:05.478057 [debug] [Thread-3 (]: SQL status: SELECT 0 in 3.585 seconds
+[0m15:20:05.483126 [debug] [Thread-3 (]: Using postgres connection "model.n8n_dbt.dim_customers"
+[0m15:20:05.483412 [debug] [Thread-3 (]: On model.n8n_dbt.dim_customers: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "node_id": "model.n8n_dbt.dim_customers"} */
+alter table "neondb"."analytics"."dim_customers__dbt_tmp" rename to "dim_customers"
+[0m15:20:05.987676 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.504 seconds
+[0m15:20:05.989185 [debug] [Thread-3 (]: On model.n8n_dbt.dim_customers: COMMIT
+[0m15:20:05.989874 [debug] [Thread-3 (]: Using postgres connection "model.n8n_dbt.dim_customers"
+[0m15:20:05.990245 [debug] [Thread-3 (]: On model.n8n_dbt.dim_customers: COMMIT
+[0m15:20:06.890521 [debug] [Thread-3 (]: SQL status: COMMIT in 0.900 seconds
+[0m15:20:06.892119 [debug] [Thread-3 (]: Applying DROP to: "neondb"."analytics"."dim_customers__dbt_backup"
+[0m15:20:06.893838 [debug] [Thread-3 (]: Using postgres connection "model.n8n_dbt.dim_customers"
+[0m15:20:06.894049 [debug] [Thread-3 (]: On model.n8n_dbt.dim_customers: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "n8n_dbt", "target_name": "dev", "node_id": "model.n8n_dbt.dim_customers"} */
+drop table if exists "neondb"."analytics"."dim_customers__dbt_backup" cascade
+[0m15:20:07.056784 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.162 seconds
+[0m15:20:07.057817 [debug] [Thread-3 (]: On model.n8n_dbt.dim_customers: Close
+[0m15:20:07.058395 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b3641b0e-3a54-4e63-ab70-192e31e667f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad73d40>]}
+[0m15:20:07.058884 [info ] [Thread-3 (]: 2 of 2 OK created sql table model analytics.dim_customers ...................... [[32mSELECT 0[0m in 5.19s]
+[0m15:20:07.059238 [debug] [Thread-3 (]: Finished running node model.n8n_dbt.dim_customers
+[0m15:20:07.060519 [debug] [MainThread]: On master: COMMIT
+[0m15:20:07.060777 [debug] [MainThread]: Using postgres connection "master"
+[0m15:20:07.060938 [debug] [MainThread]: On master: COMMIT
+[0m15:20:07.061085 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:20:07.656056 [debug] [MainThread]: SQL status: COMMIT in 0.595 seconds
+[0m15:20:07.656386 [debug] [MainThread]: On master: Close
+[0m15:20:07.656756 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:20:07.656910 [debug] [MainThread]: Connection 'model.n8n_dbt.stg_customers' was properly closed.
+[0m15:20:07.657039 [debug] [MainThread]: Connection 'model.n8n_dbt.dim_customers' was properly closed.
+[0m15:20:07.657338 [info ] [MainThread]: 
+[0m15:20:07.657603 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 8.15 seconds (8.15s).
+[0m15:20:07.658065 [debug] [MainThread]: Command end result
+[0m15:20:07.668965 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/manifest.json
+[0m15:20:07.670433 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/semantic_manifest.json
+[0m15:20:07.674010 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/target/run_results.json
+[0m15:20:07.674264 [info ] [MainThread]: 
+[0m15:20:07.674497 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:20:07.674759 [info ] [MainThread]: 
+[0m15:20:07.674990 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m15:20:07.683477 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 8.693638, "process_in_blocks": "0", "process_kernel_time": 0.329265, "process_mem_max_rss": "141656064", "process_out_blocks": "0", "process_user_time": 1.351044}
+[0m15:20:07.683887 [debug] [MainThread]: Command `dbt run` succeeded at 15:20:07.683834 after 8.69 seconds
+[0m15:20:07.684265 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109249d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10983bd10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a9700b0>]}
+[0m15:20:07.684527 [debug] [MainThread]: Flushing usage events
+[0m15:20:08.305296 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:19:51.766381 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd23830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd50890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd508c0>]}
+
+
+============================== 10:19:51.771689 | ba9cc28f-3d9b-4c20-a9c3-f9e276c50f49 ==============================
+[0m10:19:51.771689 [info ] [MainThread]: Running with dbt=1.11.2
+[0m10:19:51.772138 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'static_parser': 'True', 'version_check': 'True', 'no_print': 'None', 'debug': 'False', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --profiles-dir /Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'introspect': 'True', 'warn_error': 'None', 'empty': 'False', 'profiles_dir': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'quiet': 'False', 'fail_fast': 'False', 'target_path': 'None', 'log_format': 'default', 'log_path': '/Users/svngoku/Documents/global_projects/n8n/cours/n8n_Formation_Data_Pipeline_Engineering/dbt/logs', 'log_cache_events': 'False', 'use_colors': 'True', 'printer_width': '80'}
+[0m10:19:51.777558 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'PGPORT'
+[0m10:19:51.779672 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.09152221, "process_in_blocks": "0", "process_kernel_time": 0.264526, "process_mem_max_rss": "110149632", "process_out_blocks": "0", "process_user_time": 0.924402}
+[0m10:19:51.780185 [debug] [MainThread]: Command `dbt run` failed at 10:19:51.780076 after 0.09 seconds
+[0m10:19:51.780474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d4a9df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10da53470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d2f0260>]}
+[0m10:19:51.780712 [debug] [MainThread]: Flushing usage events
+[0m10:19:53.066090 [debug] [MainThread]: An error was encountered while trying to flush usage events

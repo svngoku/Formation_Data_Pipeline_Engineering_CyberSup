@@ -1,0 +1,13 @@
+n8n_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('PGHOST', 'localhost') }}"
+      user: "{{ env_var('PGUSER', 'postgres') }}"
+      password: "{{ env_var('PGPASSWORD', 'postgres') }}"
+      port: "{{ env_var('PGPORT', 5432) }}"
+      dbname: "{{ env_var('PGDATABASE', 'postgres') }}"
+      schema: "{{ env_var('PGSCHEMA', 'analytics') }}"
+      sslmode: "require"
+      threads: 4

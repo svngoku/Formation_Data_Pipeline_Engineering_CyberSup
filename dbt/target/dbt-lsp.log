@@ -1,0 +1,78 @@
+==================== 2026-01-15T10:20:02.096621Z | 4a182c95-996a-4206-b255-b7dc2dbad6ec ====================
+10:20:02.096862 [info ]: Starting dbt LSP server
+10:20:02.096924 [info ]: Connecting to LSP client on port 8000
+10:20:02.097204 [info ]: Successfully connected to LSP client
+10:20:02.097216 [info ]: Creating LSP service...
+10:20:02.144756 [info ]: Creating LSP server...
+10:20:02.144779 [info ]: Starting LSP server...
+10:20:02.158200 [info ]: Started loading project
+10:20:02.159535 [info ]: Finished loading project [  0.00s]
+10:20:21.409128 [info ]: Started loading project
+10:20:21.409577 [info ]: Finished loading project [  0.00s]
+10:38:17.426516 [info ]: Started loading project
+10:38:17.441030 [info ]: Finished loading project [  0.01s]
+10:38:20.730052 [info ]: Started loading project
+10:38:20.730941 [info ]: Loading profiles.yml
+10:38:21.026699 [info ]: Started parsing
+10:38:21.079729 [info ]: Finished loading project [  0.35s]
+10:38:21.093860 [info ]: Finished parsing [  0.07s]
+10:38:21.095595 [info ]: Cached model count updated: 0 models (estimate)
+10:38:21.095841 [info ]: Cached model count updated: 0 models (accurate)
+10:38:21.097683 [info ]: Started scheduling
+10:38:21.101974 [info ]: Finished scheduling [  0.00s]
+10:38:21.197128 [info ]: Loading profiles.yml
+10:38:21.222356 [info ]: Started building task graph
+10:38:21.227425 [info ]: Finished building task graph [  0.01s]
+10:38:21.239924 [info ]: Cached model count updated: 0 models (accurate)
+10:38:23.775610 [info ]: Started loading project
+10:38:23.776236 [info ]: Loading profiles.yml
+10:38:23.779246 [info ]: Started loading project
+10:38:23.779585 [info ]: Loading profiles.yml
+10:38:23.779614 [info ]: Finished loading project [  0.00s]
+10:38:24.020950 [info ]: Started parsing
+10:38:24.034968 [info ]: Finished loading project [  0.26s]
+10:38:24.043964 [info ]: Finished parsing [  0.02s]
+10:38:24.044169 [info ]: Cached model count updated: 0 models (estimate)
+10:38:24.044178 [info ]: Cached model count updated: 0 models (accurate)
+10:38:24.044193 [info ]: Started scheduling
+10:38:24.044629 [info ]: Finished scheduling [  0.00s]
+10:38:24.102783 [info ]: Started building task graph
+10:38:24.103297 [info ]: Finished building task graph [  0.00s]
+10:38:24.106215 [info ]: Cached model count updated: 0 models (accurate)
+10:38:27.319899 [info ]: Started loading project
+10:38:27.320964 [info ]: Loading profiles.yml
+10:38:27.326800 [info ]: Started loading project
+10:38:27.326954 [info ]: Loading profiles.yml
+10:38:27.333904 [info ]: Finished loading project [  0.01s]
+10:38:27.533295 [info ]: Started parsing
+10:38:27.547531 [info ]: Finished loading project [  0.22s]
+10:38:27.554437 [info ]: Finished parsing [  0.02s]
+10:38:27.554610 [info ]: Cached model count updated: 1 models (estimate)
+10:38:27.554619 [info ]: Cached model count updated: 1 models (accurate)
+10:38:27.554632 [info ]: Started scheduling
+10:38:27.554671 [info ]: Finished scheduling [  0.00s]
+14:01:33.995779 [info ]: Loading profiles.yml
+14:01:42.293999 [info ]: Loading profiles.yml
+14:01:48.877349 [info ]: Loading profiles.yml
+14:02:07.905201 [info ]: Loading profiles.yml
+14:02:33.543207 [info ]: Loading profiles.yml
+14:12:15.021772 [info ]: Loading profiles.yml
+09:13:47.386135 [info ]: Loading profiles.yml
+09:14:01.232430 [info ]: Loading profiles.yml
+09:14:03.564160 [info ]: Loading profiles.yml
+09:14:03.934473 [info ]: Loading profiles.yml
+09:14:04.772675 [info ]: Loading profiles.yml
+09:14:09.308128 [info ]: Loading profiles.yml
+09:14:11.395559 [info ]: Loading profiles.yml
+09:14:13.412423 [info ]: Loading profiles.yml
+09:14:20.941828 [info ]: Loading profiles.yml
+09:14:21.220842 [info ]: Loading profiles.yml
+09:14:33.065807 [info ]: Loading profiles.yml
+09:15:07.140041 [info ]: Loading profiles.yml
+09:15:09.653377 [info ]: Loading profiles.yml
+09:17:39.835404 [info ]: Loading profiles.yml
+09:17:41.495841 [info ]: Loading profiles.yml
+09:17:41.907689 [info ]: Loading profiles.yml
+09:19:59.780888 [info ]: Loading profiles.yml
+09:20:04.614597 [info ]: Loading profiles.yml
+09:20:25.321701 [info ]: Loading profiles.yml
